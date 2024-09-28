@@ -1,5 +1,4 @@
 window:
- 
   padding:
     x: 5
     y: 0
@@ -77,3 +76,4 @@ colors:
 
 key_bindings:
   - { key: Back, mods: Control, chars: "\u0017" }
+
