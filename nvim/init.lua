@@ -1,4 +1,11 @@
+require("config.set")
 require("config.remap")
 require("config.lazy")
 require("config.set_colorscheme")
-
+require("config.mason")
+require("config.lsp")
+require("config.cmp")
+require("config.luasnip")
+require("config.autopairs")
+require("config.alpha")
+require("config.dressing")
