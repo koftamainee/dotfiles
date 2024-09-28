@@ -1,6 +1,4 @@
 #!/bin/bash
-# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
-# Script for waybar layout or configs
 
 set -euo pipefail
 IFS=$'\n\t'
