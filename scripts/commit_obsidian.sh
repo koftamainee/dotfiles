@@ -1,5 +1,5 @@
 #!/bin/bash
-cd "$HOME/Obsidian" || echo "Failed cd to directory" && exit 1
+cd "$HOME/Obsidian" || exit
 git add .
-git commit -m "commit from $(date)"
+git commit -m "Commit from $(date)"
 git push origin master
