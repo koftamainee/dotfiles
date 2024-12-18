@@ -26,8 +26,6 @@ source $ZSH/oh-my-zsh.sh
 # Optional: Display fastfetch information
 fastfetch -c $HOME/.config/fastfetch/config-compact.jsonc
 
-
-
 # funcs
 function ex {
  if [ -z "$1" ]; then
@@ -87,11 +85,11 @@ alias '$'=""
 
 # Custom scripts
 alias t="~/scripts/t.sh"
-alias shd='bash $HOME/scripts/shutdown.sh'
 alias cfgs='bash $HOME/scripts/cfgs.sh'
 
 
 # System commands
+alias shd='bash $HOME/scripts/commit_obsidian.sh && shutdown now'
 alias srb='reboot now'
 alias sus='systemctl suspend' # when d impostor is sus
 
