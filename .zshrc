@@ -102,6 +102,7 @@ alias ff='fastfetch -c $HOME/.config/fastfetch/config-compact.jsonc'
 alias shrug='echo "¯\_(ツ)_/¯"'
 alias toss='[ $((RANDOM % 2)) -eq 0 ] && echo "🪙 Heads!" || echo "🪙 Tails!"'
 alias yolo='sudo pacman -Syu --noconfirm && paru -Syua --devel --noconfirm'
+alias cow='fortune | cowsay | lolcat'
 
 # General convenience aliases
 alias :q='exit' # vim-user moment
