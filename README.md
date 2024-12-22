@@ -1,11 +1,11 @@
 ```bash
 git clone https://github.com/koftamainee/dotfiles
 cd dotfiles
-mv .git ../
+rm -rf .git ../
 cp .zshrc ~
 cp -r scripts ~
 mkdir -p ~/.config/
 cp -ar . ~/.config/
-mv ../.git .
 cd ../
+rm -rf dotfiles
 ```
