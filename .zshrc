@@ -89,7 +89,7 @@ alias cfgs='bash $HOME/scripts/cfgs.sh'
 
 
 # System commands
-alias shd='bash $HOME/scripts/commit_obsidian.sh && shutdown now'
+alias shd='bash $HOME/scripts/commit_obsidian.sh; shutdown now'
 alias srb='reboot now'
 alias sus='systemctl suspend' # when d impostor is sus
 
