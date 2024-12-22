@@ -1,7 +1,7 @@
 ```bash
 git clone https://github.com/koftamainee/dotfiles
 cd dotfiles
-rm -rf .git ../
+rm -rf .git
 cp .zshrc ~
 cp -r scripts ~
 mkdir -p ~/.config/
