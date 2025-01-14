@@ -1,6 +1,10 @@
 # Set environment variables
 export ZSH="$HOME/.oh-my-zsh"
 export CC=clang
+export CXX=clang++
+export EDITOR=nvim
+export VISUAL=nvim
+export PATH="$PATH:$HOME/.local/bin"
 
 # Go Paths setup
 export GOPATH=$HOME/go
@@ -80,7 +84,6 @@ alias cat='bat'
 alias gs='git status'
 alias glog='git log --graph --decorate --oneline'
 alias c='clear'
-alias '#'="sudo"
 alias '$'=""
 
 # Custom scripts
@@ -90,7 +93,7 @@ alias cfgs='bash $HOME/scripts/cfgs.sh'
 
 # System commands
 alias shd='bash $HOME/scripts/commit_obsidian.sh; shutdown now'
-alias srb='reboot now'
+alias srb='sudo reboot now'
 alias sus='systemctl suspend' # when d impostor is sus
 
 # Programming stuff
@@ -112,6 +115,9 @@ alias ln='ln -i'
 alias rm='rm -I --preserve-root'
 alias mkdir='mkdir -pv'
 alias whoami='whoami && curl ident.me && echo'
+
+# pretty usefull stuff
+alias wttr='curl wttr.in'
 
 # Set-up FZF key bindings (CTRL R for fuzzy history finder)
 source <(fzf --zsh)
