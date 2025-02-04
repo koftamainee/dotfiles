@@ -26,9 +26,15 @@ plugins=(
 
 # Source oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+if [ -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]; then
+  . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+fi
 
 # Optional: Display fastfetch information
 fastfetch -c $HOME/.config/fastfetch/config-compact.jsonc
+
+# Segmentation fault (core dumped) my fav
+ulimit -c unlimited
 
 # funcs
 function ex {
@@ -85,6 +91,7 @@ alias gs='git status'
 alias glog='git log --graph --decorate --oneline'
 alias c='clear'
 alias '$'=""
+alias 'gdb'='pwndbg'
 
 # Custom scripts
 alias t="~/scripts/t.sh"
@@ -117,7 +124,7 @@ alias mkdir='mkdir -pv'
 alias whoami='whoami && curl ident.me && echo'
 
 # pretty usefull stuff
-alias wttr='curl wttr.in'
+alias wttr='curl "wttr.in/?0"'
 
 # Set-up FZF key bindings (CTRL R for fuzzy history finder)
 source <(fzf --zsh)

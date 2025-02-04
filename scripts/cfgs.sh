@@ -13,6 +13,7 @@ declare -A CONFIG_FILES=(
   [fastfetch]="$HOME/.config/fastfetch"
   [btop]="$HOME/.config/btop"
   [cava]="$HOME/.config/cava"
+  [gdb]="$HOME/.gdbinit"
 )
 
 # Define the backup directory and repository URL
