@@ -33,9 +33,7 @@ fi
 # Optional: Display fastfetch information
 fastfetch -c $HOME/.config/fastfetch/config-compact.jsonc
 
-# Segmentation fault (core dumped) my fav
-ulimit -c unlimited
-
+ulimit -c 0
 # funcs
 function ex {
  if [ -z "$1" ]; then
