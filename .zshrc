@@ -31,7 +31,9 @@ if [ -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]; then
 fi
 
 # Optional: Display fastfetch information
-fastfetch -c $HOME/.config/fastfetch/config-compact.jsonc
+echo -n "\n"
+fastfetch -c $HOME/.config/fastfetch/config-compact.jsonc --logo-color-1 magenta --title-color-user magenta --title-color-host magenta
+
 
 ulimit -c 0
 # funcs
@@ -106,7 +108,7 @@ alias vim='nvim'
 alias k8s='minikube'
 
 # Cringe stuff
-alias ff='fastfetch -c $HOME/.config/fastfetch/config-compact.jsonc'
+alias ff='fastfetch -c $HOME/.config/fastfetch/config-compact.jsonc --logo-color-1 magenta --title-color-user magenta --title-color-host magenta'
 alias shrug='echo "¯\_(ツ)_/¯"'
 alias toss='[ $((RANDOM % 2)) -eq 0 ] && echo "🪙 Heads!" || echo "🪙 Tails!"'
 alias yolo='sudo pacman -Syu --noconfirm && paru -Syua --devel --noconfirm'
