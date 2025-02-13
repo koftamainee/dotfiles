@@ -80,6 +80,13 @@ fi
 
 main
 
+wait $!
+"$SCRIPTSDIR/Wallust.sh" &&
+
+wait $!
+sleep 2
+"$SCRIPTSDIR/Refresh.sh"
+
 sleep 0.5
 ${SCRIPTSDIR}/PywalSwww.sh
 sleep 0.2
