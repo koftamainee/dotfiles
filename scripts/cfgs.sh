@@ -14,6 +14,7 @@ declare -A CONFIG_FILES=(
   [btop]="$HOME/.config/btop"
   [cava]="$HOME/.config/cava"
   [gdb]="$HOME/.gdbinit"
+  [rofi]="$HOME/.config/rofi"
 )
 
 # Define the backup directory and repository URL
