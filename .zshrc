@@ -92,6 +92,7 @@ alias glog='git log --graph --decorate --oneline'
 alias c='clear'
 alias '$'=""
 alias 'gdb'='pwndbg'
+alias 'open'='xdg-open'
 
 # Custom scripts
 alias t="~/scripts/t.sh"
