@@ -38,7 +38,7 @@ if [ $# -eq 0 ]; then
 fi
 
 case "$1" in
-  "labs") start_tmux rgu-labs
+  "labs") start_tmux rgu-labs-term2-DSA
     ;;
   *) start_tmux "$1"
     ;;
