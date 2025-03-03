@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
-    event = 'BufWritePre', -- uncomment for format on save
+    event = "BufWritePre", -- uncomment for format on save
     opts = require "configs.conform",
   },
 
@@ -22,11 +22,11 @@ return {
       },
       view = {
         -- width = vim.o.columns, -- Set width to full screen
-        side = "left",         -- You can also set "right" if preferred
-        number = false,        -- Optional: Disable line numbers
-        relativenumber = false -- Optional: Disable relative numbers
-      }
-    }
+        side = "left", -- You can also set "right" if preferred
+        number = false, -- Optional: Disable line numbers
+        relativenumber = false, -- Optional: Disable relative numbers
+      },
+    },
   },
   {
     {
@@ -40,21 +40,12 @@ return {
         "TmuxNavigatePrevious",
       },
       keys = {
-        { "<c-h>",  "<cmd><C-U>TmuxNavigateLeft<cr>" },
-        { "<c-j>",  "<cmd><C-U>TmuxNavigateDown<cr>" },
-        { "<c-k>",  "<cmd><C-U>TmuxNavigateUp<cr>" },
-        { "<c-l>",  "<cmd><C-U>TmuxNavigateRight<cr>" },
+        { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+        { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+        { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+        { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
         { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
       },
     },
   },
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
 }
