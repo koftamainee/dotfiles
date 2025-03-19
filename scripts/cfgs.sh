@@ -14,7 +14,7 @@ declare -A CONFIG_FILES=(
   [cava]="$HOME/.config/cava"
   [gdb]="$HOME/.gdbinit"
   [rofi]="$HOME/.config/rofi"
-  [ghostty]="$HOME/.config/ghostty/"
+  [wezterm]="$HOME/.config/wezterm"
 )
 
 # Define the backup directory and repository URL

@@ -12,10 +12,7 @@ DURATION=1
 BEZIER=".43,1.19,1,.4"
 SWWW_PARAMS="--transition-fps $FPS --transition-type $TYPE --transition-duration $DURATION"
 
-# Check if swaybg is running
-if pidof swaybg > /dev/null; then
-  pkill swaybg
-fi
+
 
 # Retrieve image files
 PICS=($(ls "${wallDIR}" | grep -E ".jpg$|.jpeg$|.png$|.gif$"))
@@ -38,7 +35,6 @@ menu() {
   printf "$RANDOM_PIC_NAME\n"
 }
 
-swww query || swww restore
 
 main() {
   choice=$(menu | ${rofi_command})
@@ -47,6 +43,8 @@ main() {
   if [[ -z $choice ]]; then
     exit 0
   fi
+
+  swww-daemon
 
   # Random choice case
   if [ "$choice" = "$RANDOM_PIC_NAME" ]; then
