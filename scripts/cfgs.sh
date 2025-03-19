@@ -6,7 +6,6 @@ declare -A CONFIG_FILES=(
   [zsh]="$HOME/.zshrc"
   [hypr]="$HOME/.config/hypr"
   [waybar]="$HOME/.config/waybar"
-  [foot]="$HOME/.config/foot"
   [gtk]="$HOME/.config/gtk-3.0 $HOME/.config/gtk-4.0"
   [qt]="$HOME/.config/qt5ct $HOME/.config/qt6ct"
   [nvim]="$HOME/.config/nvim"
@@ -15,6 +14,7 @@ declare -A CONFIG_FILES=(
   [cava]="$HOME/.config/cava"
   [gdb]="$HOME/.gdbinit"
   [rofi]="$HOME/.config/rofi"
+  [ghostty]="$HOME/.config/ghostty/"
 )
 
 # Define the backup directory and repository URL

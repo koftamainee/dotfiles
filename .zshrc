@@ -92,6 +92,13 @@ alias glog='git log --graph --decorate --oneline'
 alias c='clear'
 alias '$'=""
 alias 'gdb'='pwndbg'
+mkcd() { mkdir -p "$1" && cd "$1" }
+alias pyserver='python3 -m http.server 8000'
+
+# Safety !!!
+alias chmod='chmod --preserve-root'
+alias chown='chown --preserve-root'
+alias chgrp='chgrp --preserve-root'
 
 # Custom scripts
 alias t="~/scripts/t.sh"

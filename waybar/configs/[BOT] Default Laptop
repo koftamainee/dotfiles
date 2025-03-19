@@ -37,15 +37,12 @@
 "modules-center": [
 	"custom/menu",
 	"custom/separator#dot-line",
-	"idle_inhibitor", 
-	"custom/separator#dot-line",
 	"clock",
 	"custom/separator#dot-line",
 	"custom/light_dark",
 	"custom/separator#dot-line",	
 	"custom/lock",
 	//],
-	"custom/separator#dot-line",
 	"custom/keybinds",	
 	], 
 
