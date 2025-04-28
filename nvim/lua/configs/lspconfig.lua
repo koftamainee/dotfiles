@@ -3,7 +3,19 @@ require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
 
-local servers = { "lua_ls", "clangd", "rust_analyzer", "gopls", "pyright", "bashls", "texlab", "cmake", "dockerls" }
+local servers = {
+  "lua_ls",
+  "clangd",
+  "rust_analyzer",
+  "gopls",
+  "pyright",
+  "bashls",
+  "texlab",
+  "cmake",
+  "dockerls",
+  "sqlls",
+  "hls",
+}
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config

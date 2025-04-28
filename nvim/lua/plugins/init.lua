@@ -1,5 +1,12 @@
 return {
   {
+    "vyfor/cord.nvim",
+    lazy = false,
+    build = ":Cord update",
+    -- opts = {}
+  },
+
+  {
     "stevearc/conform.nvim",
     event = "BufWritePre", -- uncomment for format on save
     opts = require "configs.conform",

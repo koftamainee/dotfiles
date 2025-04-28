@@ -5,6 +5,7 @@ export CXX=clang++
 export EDITOR=nvim
 export VISUAL=nvim
 export PATH="$PATH:$HOME/.local/bin"
+export TERM_PROGRAM=wezterm
 
 # Go Paths setup
 export GOPATH=$HOME/go
@@ -12,6 +13,9 @@ export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
 
 # Rust Paths setup
 export PATH="$HOME/.cargo/bin:$PATH"
+
+export PATH=~/.cabal/bin:~/.ghcup/bin:$PATH
+[ -f "/home/kofta/.ghcup/env" ] && . "/home/kofta/.ghcup/env" # ghcup-env
 
 # ZSH theme
 ZSH_THEME="xiong-chiamiov-plus"
@@ -131,7 +135,7 @@ alias mkdir='mkdir -pv'
 alias whoami='whoami && curl ident.me && echo'
 
 # pretty usefull stuff
-alias wttr='curl "wttr.in/?0"'
+alias wttr='curl "wttr.in"'
 
 # Set-up FZF key bindings (CTRL R for fuzzy history finder)
 source <(fzf --zsh)
@@ -144,5 +148,7 @@ setopt appendhistory
 
 # THE FUCK
 eval $(thefuck --alias)
+
+
 
 

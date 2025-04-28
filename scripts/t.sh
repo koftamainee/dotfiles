@@ -38,7 +38,9 @@ if [ $# -eq 0 ]; then
 fi
 
 case "$1" in
-  "labs") start_tmux rgu/rgu-labs-term2-DSA
+  "labs") start_tmux rgu/rgu-labs-term2-DSA-big-math
+    ;;
+  "alloc") start_tmux rgu/rgu-labs-term2-DSA-allocators
     ;;
   *) start_tmux "$1"
     ;;

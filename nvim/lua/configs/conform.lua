@@ -9,6 +9,8 @@ local options = {
     bash = { "beautysh" },
     tex = { "latexindent" },
     cmake = { "cmake_format" },
+    sql = { "sql_formatter" },
+    haskell = { "ormolu" },
   },
 
   format_on_save = {
