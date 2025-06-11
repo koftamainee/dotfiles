@@ -6,7 +6,6 @@ local lspconfig = require "lspconfig"
 local servers = {
   "lua_ls",
   "clangd",
-  "rust_analyzer",
   "gopls",
   "pyright",
   "bashls",
@@ -16,6 +15,7 @@ local servers = {
   "sqlls",
   "hls",
 }
+vim.lsp.enable "nushell"
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config

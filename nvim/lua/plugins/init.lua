@@ -1,5 +1,15 @@
 return {
   {
+    "mrcjkb/rustaceanvim",
+    version = "^6", -- Recommended
+    lazy = false, -- This plugin is already lazy
+    ["rust-analyzer"] = {
+      cargo = {
+        allFeatures = true,
+      },
+    },
+  },
+  {
     "vyfor/cord.nvim",
     lazy = false,
     build = ":Cord update",
@@ -10,11 +20,6 @@ return {
     "stevearc/conform.nvim",
     event = "BufWritePre", -- uncomment for format on save
     opts = require "configs.conform",
-  },
-  {
-    "mrcjkb/rustaceanvim",
-    version = "^5", -- Recommended
-    lazy = false, -- This plugin is already lazy
   },
 
   {
@@ -64,7 +69,7 @@ return {
     run = ":TSUpdate",
     config = function()
       require("nvim-treesitter.configs").setup {
-        ensure_installed = { "cpp", "c", "python", "lua", "bash", "rust", "go", "javascript", "typescript" }, -- Здесь можно добавить все языки
+        ensure_installed = { "cpp", "c", "python", "lua", "bash", "rust", "go", "javascript", "typescript", "nu" }, -- Здесь можно добавить все языки
         highlight = {
           enable = true, -- Включаем подсветку синтаксиса
           disable = {}, -- Список языков, которые не будут использовать Treesitter

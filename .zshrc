@@ -1,3 +1,4 @@
+
 # Set environment variables
 export ZSH="$HOME/.oh-my-zsh"
 export CC=clang
@@ -148,7 +149,4 @@ setopt appendhistory
 
 # THE FUCK
 eval $(thefuck --alias)
-
-
-
-
+eval "$(starship init zsh)"
