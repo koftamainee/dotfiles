@@ -20,10 +20,13 @@ done
 
 # quit ags
 ags -q
+pkill kitty
 
 sleep 0.3
 #Restart waybar
 waybar &
+sleep 0.3
+KITTY_DISABLE_WAYLAND=1 kitty --class="kitty-bg" "/home/kofta/.config/hypr/cava.sh"
 
 # relaunch swaync
 sleep 0.5

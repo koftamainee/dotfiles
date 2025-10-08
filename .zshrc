@@ -95,6 +95,8 @@ alias lt='eza -a --tree --level=1 --icons'
 alias cat='bat'
 
 # I am too lazy
+alias tree="erd"
+alias du="dust"
 alias lh='~/scripts/lh.sh'
 alias gs='git status'
 alias glog='git log --graph --decorate --oneline'
