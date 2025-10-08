@@ -6,11 +6,11 @@ SCRIPTSDIR="$HOME/.config/hypr/scripts"
 wallDIR="$HOME/Pictures/wallpapers"
 
 # Transition config
-FPS=30
-TYPE="wipe"
-DURATION=1
-BEZIER=".43,1.19,1,.4"
-SWWW_PARAMS="--transition-fps $FPS --transition-type $TYPE --transition-duration $DURATION"
+FPS=60
+TYPE="any"
+DURATION=3
+BEZIER="0.4,0.2,0.4,1.0"
+SWWW_PARAMS="--transition-fps ${FPS} --transition-type ${TYPE} --transition-duration ${DURATION} --transition-bezier ${BEZIER}"
 
 # Check if swaybg is running
 if pidof swaybg > /dev/null; then
@@ -23,7 +23,7 @@ RANDOM_PIC="${PICS[$((RANDOM % ${#PICS[@]}))]}"
 RANDOM_PIC_NAME="${#PICS[@]}. random"
 
 # Rofi command
-rofi_command="rofi -show -dmenu -config ~/.config/rofi/config-wallpaper.rasi"
+rofi_command="rofi -show -dmenu -theme ~/.config/rofi/themes/wallpaper-select.rasi"
 
 menu() {
   for i in "${!PICS[@]}"; do
