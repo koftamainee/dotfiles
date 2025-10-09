@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+## /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
+# Clipboard Manager. This script uses cliphist, rofi, and wl-copy.
 
 # Actions:
 # CTRL Del to delete an entry
@@ -9,7 +11,7 @@ while true; do
         rofi -dmenu \
             -kb-custom-1 "Control-Delete" \
             -kb-custom-2 "Alt-Delete" \
-            -config ~/.config/rofi/config-clipboard.rasi < <(cliphist list)
+            -config ~/.config/rofi/themes/clipboard.rasi < <(cliphist list)
     )
 
     case "$?" in
@@ -35,4 +37,3 @@ while true; do
             ;;
     esac
 done
-
