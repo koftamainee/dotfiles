@@ -8,10 +8,8 @@ export PATH="$PATH:$HOME/.local/bin"
 export TERM_PROGRAM=ghostty
 
 
-export NATIVE_WAYLAND=1
-export OZONE_PLATFORM=wayland
-export ELECTRON_OZONE_PLATFORM_HINT=wayland
-export QT_QPA_PLATFORM=wayland
+export PATH="$HOME/.cargo/bin:$PATH"
+source $HOME/.cargo/env
 
 
 export RUSTUP_DIST_SERVER="https://rsproxy.cn"
