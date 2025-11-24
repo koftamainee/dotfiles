@@ -45,7 +45,6 @@ ulimit -c 0
 # funcs
 function ex {
  if [ -z "$1" ]; then
-    # display usage if no parameters given
     echo "Usage: ex <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
     echo "       extract <path/file_name_1.ext> [path/file_name_2.ext] [path/file_name_3.ext]"
  else
@@ -84,6 +83,11 @@ pls () {
   /usr/bin/sudo $(history | tail -n 1 | awk '{$1=""; print substr($0,2)}')
 }
 
+
+
+alias t="$HOME/scripts/t.sh"
+
+
 # Mom we have ls at home
 alias ls='eza -a --icons'
 alias ll='eza -al --icons'
@@ -103,7 +107,6 @@ alias '$'=""
 alias 'gdb'='pwndbg'
 mkcd() { mkdir -p "$1" && cd "$1" }
 alias pyserver='python3 -m http.server 8000'
-alias spsql='bash $HOME/scripts/spsql.sh'
 
 # Safety !!!
 alias chmod='chmod --preserve-root'
@@ -111,7 +114,6 @@ alias chown='chown --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
 # Custom scripts
-alias t="~/scripts/t.sh"
 alias cfgs='bash $HOME/scripts/cfgs.sh'
 
 

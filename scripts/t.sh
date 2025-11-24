@@ -42,16 +42,10 @@ if [ $# -eq 0 ]; then
   tmux attach
 fi
 
-case "$1" in
-  "labs") start_tmux rgu/rgu-labs-term2-DSA-big-math
-    ;;
-  "alloc") start_tmux rgu/rgu-labs-term2-DSA-allocators
-    ;;
-  "elevator") start_tmux rgu/elevator-control-system
-    ;;
-  "linal") start_tmux rgu/linal-sdk
-    ;;
-  *) start_tmux "$1"
-    ;;
-esac
+start_tmux "$1"
+
+# case "$1" in
+  # *) start_tmux "$1"
+    # ;;
+# esac
 

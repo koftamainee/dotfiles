@@ -1,5 +1,12 @@
 return {
   {
+    "wakatime/vim-wakatime",
+    lazy = false,
+    setup = function()
+      vim.cmd [[packadd wakatime/vim-wakatime]]
+    end,
+  },
+  {
     "iamkarasik/sonarqube.nvim",
     config = function()
       require("sonarqube").setup {}
