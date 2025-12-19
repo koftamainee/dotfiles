@@ -34,6 +34,7 @@ swaync > /dev/null 2>&1 &
 
 # relaunch ags
 ags &
+activate-linux &
 
 # Relaunching rainbow borders if the script exists
 sleep 1

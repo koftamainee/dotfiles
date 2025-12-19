@@ -17,6 +17,7 @@ if [ "$HYPRGAMEMODE" = 1 ] ; then
 	
 	hyprctl keyword "windowrule opacity 1 override 1 override 1 override, ^(.*)$"
     swww kill 
+    pkill activate-linux
     notify-send -e -u low -i "$notif" "gamemode enabled. All animations off"
     exit
 else
