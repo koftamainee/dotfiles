@@ -154,12 +154,10 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
-# THE FUCK
-eval $(thefuck --alias)
-eval "$(starship init zsh)"
-
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
 [[ -f /home/kofta/.dart-cli-completion/zsh-config.zsh ]] && . /home/kofta/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 
+
+eval "$(starship init zsh)"
