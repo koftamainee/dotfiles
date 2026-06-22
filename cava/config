@@ -1,0 +1,19 @@
+[general]
+bar_width = 2
+bar_spacing = 1
+max_height = 20
+
+[input]
+method = pipewire
+source = auto
+
+[color]
+gradient = 2
+gradient_count = 4
+gradient_color_1 = '#1a0800'
+gradient_color_2 = '#1a0800'
+gradient_color_3 = '#3d1500'
+gradient_color_4 = '#C47530'
+
+[smoothing]
+noise_reduction = 60
