@@ -10,7 +10,6 @@ declare -A CONFIG_FILES=(
   [qt]="$HOME/.config/qt5ct $HOME/.config/qt6ct"
   [nvim]="$HOME/.config/nvim"
   [fastfetch]="$HOME/.config/fastfetch"
-  [btop]="$HOME/.config/btop"
   [cava]="$HOME/.config/cava"
   [gdb]="$HOME/.gdbinit"
   [rofi]="$HOME/.config/rofi"
