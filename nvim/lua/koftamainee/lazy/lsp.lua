@@ -11,21 +11,14 @@ return {
         "hrsh7th/nvim-cmp",
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
+        "onsails/lspkind.nvim",
+        "b0o/schemastore.nvim",
         "j-hui/fidget.nvim",
     },
 
     config = function()
-        require("conform").setup({
-            formatters_by_ft = {
-            }
-        })
         local cmp = require('cmp')
-        local cmp_lsp = require("cmp_nvim_lsp")
-        local capabilities = vim.tbl_deep_extend(
-            "force",
-            {},
-            vim.lsp.protocol.make_client_capabilities(),
-            cmp_lsp.default_capabilities())
+        local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
         require("fidget").setup({})
         require("mason").setup()
@@ -35,96 +28,165 @@ return {
                 "rust_analyzer",
                 "gopls",
                 "clangd",
+                "pyright",
+                "bashls",
+                "texlab",
+                "dockerls",
+                "neocmake",
+                "hls",
+                "elixirls",
+                "ocamllsp",
+                "jsonls",
+                "yamlls",
+                "taplo",
             },
-            handlers = {
-                function(server_name) -- default handler
-                    require("lspconfig")[server_name].setup {
-                        capabilities = capabilities
+        })
+
+        vim.lsp.config('*', { capabilities = capabilities })
+
+        vim.lsp.config('lua_ls', {
+            settings = {
+                Lua = {
+                    runtime = {
+                        version = 'LuaJIT',
+                    },
+                    diagnostics = {
+                        globals = { 'vim' },
+                    },
+                    workspace = {
+                        library = vim.api.nvim_get_runtime_file("", true),
+                        checkThirdParty = false
                     }
-                end,
-
-                zls = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.zls.setup({
-                        root_dir = lspconfig.util.root_pattern(".git", "build.zig", "zls.json"),
-                        settings = {
-                            zls = {
-                                enable_inlay_hints = true,
-                                enable_snippets = true,
-                                warn_style = true,
-                            },
-                        },
-                    })
-                    vim.g.zig_fmt_parse_errors = 0
-                    vim.g.zig_fmt_autosave = 0
-                end,
-
-                ["lua_ls"] = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.lua_ls.setup {
-                        capabilities = capabilities,
-                        settings = {
-                            Lua = {
-                                runtime = {
-                                    version = 'LuaJIT',
-                                },
-                                diagnostics = {
-                                    globals = { 'vim' },
-                                },
-                                workspace = {
-                                    library = vim.api.nvim_get_runtime_file("", true),
-                                    checkThirdParty = false,
-                                },
-                                format = {
-                                    enable = true,
-                                    defaultConfig = {
-                                        indent_style = "space",
-                                        indent_size = "2",
-                                    }
-                                },
-                            }
-                        }
-                    }
-                end,
-
-                ["clangd"] = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.clangd.setup({
-                        capabilities = capabilities,
-                        cmd = {
-                            "clangd",
-                            "--background-index",
-                            "--clang-tidy",
-                            "--header-insertion=iwyu",
-                        },
-                    })
-                end,
+                }
             }
         })
 
-        local cmp_select = { behavior = cmp.SelectBehavior.Select }
+        vim.lsp.config('clangd', {
+            cmd = {
+                "clangd",
+                "--background-index",
+                "--clang-tidy",
+                "--header-insertion=iwyu",
+            },
+        })
+
+        vim.lsp.config('buf_ls', {
+            cmd = { "buf", "lsp", "serve", "--log-format=text" },
+            filetypes = { "proto", "buf-config" },
+            root_markers = { "buf.yaml", ".git" },
+        })
+
+        local schemastore_ok, schemastore = pcall(require, "schemastore")
+        local yamlls_settings = {
+            yaml = {
+                schemaStore = {
+                    enable = not schemastore_ok,
+                    url = "https://www.schemastore.org/api/json/catalog.json",
+                },
+                schemas = {},
+            },
+        }
+        if schemastore_ok then
+            yamlls_settings.yaml.schemas = schemastore.yaml.schemas
+        end
+        vim.lsp.config('yamlls', { settings = yamlls_settings })
+
+        vim.lsp.config('elixirls', {
+            settings = {
+                elixirLS = {
+                    dialyzerEnabled = true,
+                    suggestSpecs = true,
+                    enableTestLenses = true,
+                    autoBuild = true,
+                    signatureAfterComplete = true,
+                }
+            }
+        })
+
+        vim.lsp.enable({
+            'lua_ls',
+            'rust_analyzer',
+            'gopls',
+            'clangd',
+            'pyright',
+            'bashls',
+            'texlab',
+            'dockerls',
+            'neocmake',
+            'hls',
+            'elixirls',
+            'ocamllsp',
+            'jsonls',
+            'yamlls',
+            'taplo',
+            'buf_ls',
+        })
+
+        local has_words_before = function()
+            unpack = unpack or table.unpack
+            local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+            return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+        end
 
         cmp.setup({
+            enabled = function()
+                local context = require("cmp.config.context")
+                return not context.in_treesitter_capture("string")
+                    and not context.in_syntax_group("String")
+            end,
             snippet = {
                 expand = function(args)
                     require('luasnip').lsp_expand(args.body)
                 end,
             },
+            window = {
+                completion = vim.tbl_extend("force", cmp.config.window.bordered(), {
+                    winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel",
+                }),
+                documentation = vim.tbl_extend("force", cmp.config.window.bordered(), {
+                    winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder",
+                }),
+            },
+            formatting = {
+                format = require("lspkind").cmp_format({
+                    mode = "symbol_text",
+                    maxwidth = 50,
+                    ellipsis_char = "...",
+                }),
+            },
             mapping = cmp.mapping.preset.insert({
-                ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-                ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-                ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+                ["<Tab>"] = cmp.mapping(function(fallback)
+                    if cmp.visible() then
+                        cmp.select_next_item()
+                    elseif has_words_before() then
+                        cmp.complete()
+                    else
+                        fallback()
+                    end
+                end, { "i", "s" }),
+                ["<S-Tab>"] = cmp.mapping(function(fallback)
+                    if cmp.visible() then
+                        cmp.select_prev_item()
+                    else
+                        fallback()
+                    end
+                end, { "i", "s" }),
+                ["<CR>"] = cmp.mapping.confirm({ select = true }),
                 ["<C-Space>"] = cmp.mapping.complete(),
             }),
             sources = cmp.config.sources({
-                { name = 'nvim_lsp' },
-                { name = 'luasnip' },
+                { name = 'nvim_lsp', group_index = 1 },
+                { name = 'luasnip', group_index = 1 },
             }, {
-                { name = 'buffer' },
-            })
+                { name = 'buffer', group_index = 2 },
+            }),
         })
 
         vim.diagnostic.config({
+            virtual_text = {
+                prefix = " ",
+                spacing = 4,
+            },
             float = {
                 focusable = false,
                 style = "minimal",
@@ -133,6 +195,7 @@ return {
                 header = "",
                 prefix = "",
             },
+            signs = true,
         })
     end
 }

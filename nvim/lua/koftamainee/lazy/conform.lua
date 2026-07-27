@@ -7,18 +7,25 @@ return {
 				timeout_ms = 5000,
 				lsp_format = "fallback",
 			},
-			formatters_by_ft = {
-				c = { "clang-format" },
-				cpp = { "clang-format" },
-				lua = { "stylua" },
-				go = { "gofmt" },
-				zig = { "zigfmt" },
+		formatters_by_ft = {
+			c = { "clang-format" },
+			cpp = { "clang-format" },
+			lua = { "stylua" },
+			go = { "gofmt" },
+			rust = { "rustfmt" },
+			python = { "black" },
+			bash = { "beautysh" },
+			haskell = { "ormolu" },
+			tex = { "latexindent" },
+			cmake = { "cmake_format" },
+			elixir = { "mix_format" },
+			ocaml = { "ocamlformat" },
+		},
+		formatters = {
+			["clang-format"] = {
+				prepend_args = { "-style=file", "-fallback-style=LLVM" },
 			},
-			formatters = {
-				["clang-format"] = {
-					prepend_args = { "-style=file", "-fallback-style=LLVM" },
-				},
-			},
+		},
 		})
 
 		vim.keymap.set("n", "<leader>f", function()

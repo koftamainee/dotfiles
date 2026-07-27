@@ -1,48 +1,60 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-textobjects",
 		},
-		branch = "master",
 		config = function()
-			require("nvim-treesitter.configs").setup({
-				ensure_installed = {
-					"vimdoc",
-					"c",
-					"cpp",
-					"lua",
-					"rust",
-					"go",
-					"zig",
-					"bash",
-					"markdown",
-					"markdown_inline",
-				},
+			local parsers = {
+				"vimdoc",
+				"c",
+				"cpp",
+				"lua",
+				"rust",
+				"go",
+				"python",
+				"haskell",
+				"bash",
+				"dockerfile",
+				"cmake",
+				"latex",
+				"elixir",
+				"ocaml",
+				"sql",
+				"json",
+				"yaml",
+				"toml",
+				"proto",
+				"hcl",
+				"markdown",
+				"markdown_inline",
+			}
 
-				sync_install = false,
-				auto_install = true,
+			require("nvim-treesitter").install(parsers)
 
-				indent = {
-					enable = true,
-				},
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = parsers,
+				callback = function(args)
+					vim.treesitter.start(args.buf)
 
-				highlight = {
-					enable = true,
-					disable = function(lang, buf)
-						local max_filesize = 100 * 1024 -- 100 KB
-						local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-						if ok and stats and stats.size > max_filesize then
-							vim.notify(
-								"File larger than 100KB treesitter disabled for performance",
-								vim.log.levels.WARN,
-								{ title = "Treesitter" }
-							)
-							return true
-						end
-					end,
+					local ok, stats = pcall(vim.uv.fs_stat, vim.api.nvim_buf_get_name(args.buf))
+					if ok and stats and stats.size > 100 * 1024 then
+						vim.treesitter.stop(args.buf)
+					end
+				end,
+			})
 
-					additional_vim_regex_highlighting = { "markdown" },
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = parsers,
+				callback = function()
+					vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+				end,
+			})
+
+			require("nvim-treesitter-textobjects").setup({
+				select = {
+					lookahead = true,
 				},
 			})
 		end,
@@ -50,7 +62,7 @@ return {
 
 	{
 		"nvim-treesitter/nvim-treesitter-context",
-		after = "nvim-treesitter",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		config = function()
 			require("treesitter-context").setup({
 				enable = true,

@@ -5,6 +5,7 @@
     "layer": "top",
 
     "modules-left": [
+      "custom/haskell",
       "niri/workspaces"
     ],
 
@@ -20,6 +21,7 @@
       "clock",
       "tray"
     ],
+
 
     "niri/workspaces": {
       "format": "{icon}",

@@ -43,6 +43,17 @@ plugins=(
 
 source "$ZSH/oh-my-zsh.sh"
 
+unalias md
+
+md() {
+    if [ -z "$1" ]; then
+        echo "md: Specify markdown file to edit"
+        return 1
+    fi
+    marktext $1 &!
+}
+
+
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
@@ -144,3 +155,15 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
+
+eval "$(mise activate zsh)"
+
+[ -f "/home/kofta/.ghcup/env" ] && . "/home/kofta/.ghcup/env" # ghcup-env
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/home/kofta/.opam/opam-init/init.zsh' ]] || source '/home/kofta/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration
