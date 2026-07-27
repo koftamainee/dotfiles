@@ -1,2 +1,1 @@
-require("koftamainee")
-
+require "koftamainee"
