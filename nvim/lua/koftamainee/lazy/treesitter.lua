@@ -2,9 +2,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter-textobjects",
-    },
+
     config = function()
       local parsers = {
         "vimdoc",
@@ -29,6 +27,7 @@ return {
         "hcl",
         "markdown",
         "markdown_inline",
+        "slang",
       }
 
       require("nvim-treesitter").install(parsers)
@@ -51,12 +50,6 @@ return {
           vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
         end,
       })
-
-      require("nvim-treesitter-textobjects").setup {
-        select = {
-          lookahead = true,
-        },
-      }
     end,
   },
 
