@@ -87,6 +87,7 @@ alias :q='exit'
 alias whoami='whoami && curl -s ident.me && echo'
 
 # dont use it now, but dont want to delete it
+# dont want to delete comment above this one, now t.sh is tmux-sessionizer
 alias t="$HOME/scripts/t.sh"
 alias cfgs='bash $HOME/scripts/cfgs.sh'
 
