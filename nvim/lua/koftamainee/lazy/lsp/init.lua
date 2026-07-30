@@ -214,4 +214,6 @@ return {
   require "koftamainee.lazy.lsp.haskell",
   -- require "koftamainee.lazy.lsp.elixir",
   require "koftamainee.lazy.lsp.slang",
+  require "koftamainee.lazy.lsp.cpp",
+  require "koftamainee.lazy.lsp.go",
 }
