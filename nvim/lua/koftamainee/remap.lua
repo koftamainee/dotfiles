@@ -27,9 +27,9 @@ vim.keymap.set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete without yankin
 vim.keymap.set("i", "<C-c>", "<Esc>", { desc = "Escape" })
 
 vim.keymap.set("n", "Q", "<nop>", { desc = "Disable Ex mode" })
--- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
--- vim.keymap.set("n", "<M-h>", "<cmd>silent !tmux-sessionizer -s 0 --vsplit<CR>")
--- vim.keymap.set("n", "<M-H>", "<cmd>silent !tmux neww tmux-sessionizer -s 0<CR>")
+vim.keymap.set("n", "<C-f>", function()
+  vim.fn.system "tmux neww tmux-sessionizer"
+end, { desc = "Tmux sessionizer" })
 vim.keymap.set("n", "<leader>c", "<cmd>cnext<CR>zz", { desc = "Next quickfix" })
 vim.keymap.set("n", "<leader>C", "<cmd>cprev<CR>zz", { desc = "Previous quickfix" })
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz", { desc = "Next location" })

@@ -14,6 +14,8 @@ declare -A CONFIG_FILES=(
   [gdb]="$HOME/.gdbinit"
   [rofi]="$HOME/.config/rofi"
   [kitty]="$HOME/.config/kitty"
+  [tmux]="$HOME/.config/tmux"
+  [tmux-sessionizer]="$HOME/.config/tmux-sessionizer"
 )
 
 # Define the backup directory and repository URL

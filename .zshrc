@@ -160,6 +160,9 @@ eval "$(mise activate zsh)"
 
 [ -f "/home/kofta/.ghcup/env" ] && . "/home/kofta/.ghcup/env" # ghcup-env
 
+# tmux-sessionizer
+bindkey -s '^f' "tmux-sessionizer\n"
+
 # BEGIN opam configuration
 # This is useful if you're using opam as it adds:
 #   - the correct directories to the PATH
