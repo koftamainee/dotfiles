@@ -6,6 +6,4 @@ return {
   },
 
   "eandrju/cellular-automaton.nvim",
-
-  require "koftamainee.lazy.crates",
 }

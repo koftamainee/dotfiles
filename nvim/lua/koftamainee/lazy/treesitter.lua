@@ -28,6 +28,7 @@ return {
         "markdown",
         "markdown_inline",
         "slang",
+        "zig",
       }
 
       require("nvim-treesitter").install(parsers)
@@ -44,8 +45,15 @@ return {
         end,
       })
 
+      local indent_parsers = vim.deepcopy(parsers)
+      for i = #indent_parsers, 1, -1 do
+        if indent_parsers[i] == "ocaml" then
+          table.remove(indent_parsers, i)
+        end
+      end
+
       vim.api.nvim_create_autocmd("FileType", {
-        pattern = parsers,
+        pattern = indent_parsers,
         callback = function()
           vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
         end,

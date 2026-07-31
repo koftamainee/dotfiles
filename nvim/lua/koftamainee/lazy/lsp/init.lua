@@ -37,6 +37,7 @@ return {
           "taplo",
           "buf_ls",
           "elixirls",
+          "zls",
         },
       }
 
@@ -126,6 +127,7 @@ return {
         "taplo",
         "buf_ls",
         "elixirls",
+        "ocamllsp",
       }
 
       local has_words_before = function()
@@ -211,8 +213,10 @@ return {
     end,
   },
   require "koftamainee.lazy.lsp.rust",
+  require "koftamainee.lazy.lsp.crates",
   require "koftamainee.lazy.lsp.haskell",
   require "koftamainee.lazy.lsp.slang",
   require "koftamainee.lazy.lsp.cpp",
   require "koftamainee.lazy.lsp.go",
+  require "koftamainee.lazy.lsp.ocaml",
 }

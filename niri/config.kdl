@@ -36,7 +36,8 @@ input {
             // localectl set-x11-keymap.
 
             layout "us,ru"
-            options "grp:caps_toggle"
+            // the greatest remap ever v2.0
+            options "grp:lctrl_toggle,ctrl:nocaps,shift:both_capslock"
         }
             repeat-delay 300
             repeat-rate 50
