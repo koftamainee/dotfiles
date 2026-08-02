@@ -37,7 +37,7 @@ input {
 
             layout "us,ru"
             // the greatest remap ever v2.0
-            options "grp:lctrl_toggle,ctrl:nocaps,shift:both_capslock"
+            options "grp:rctrl_toggle,grp:lctrl_toggle,ctrl:swapcaps,shift:both_capslock"
         }
             repeat-delay 300
             repeat-rate 50

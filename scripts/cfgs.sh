@@ -16,7 +16,7 @@ declare -A CONFIG_FILES=(
   [kitty]="$HOME/.config/kitty"
   [tmux]="$HOME/.config/tmux"
   [tmux-sessionizer]="$HOME/.config/tmux-sessionizer"
-  [emacs]="$HOME/.config/emacs"
+  [doom]="$HOME/.config/doom"
 )
 
 # Define the backup directory and repository URL
