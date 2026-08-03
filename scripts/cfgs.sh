@@ -2,22 +2,23 @@
 
 # Declare the associative array of configuration files
 declare -A CONFIG_FILES=(
-  [scripts]="$HOME/scripts/"
-  [zsh]="$HOME/.zshrc"
-  [niri]="$HOME/.config/niri"
-  [waybar]="$HOME/.config/waybar"
-  [gtk]="$HOME/.config/gtk-3.0 $HOME/.config/gtk-4.0"
-  [qt]="$HOME/.config/qt5ct $HOME/.config/qt6ct"
-  [fontconfig]="$HOME/.config/fontconfig"
-  [nvim]="$HOME/.config/nvim"
-  [fastfetch]="$HOME/.config/fastfetch"
-  [cava]="$HOME/.config/cava"
-  [gdb]="$HOME/.gdbinit"
-  [rofi]="$HOME/.config/rofi"
-  [kitty]="$HOME/.config/kitty"
-  [tmux]="$HOME/.config/tmux"
-  [tmux-sessionizer]="$HOME/.config/tmux-sessionizer"
-  [doom]="$HOME/.config/doom"
+    [scripts]="$HOME/scripts/"
+    [zsh]="$HOME/.zshrc"
+    [niri]="$HOME/.config/niri"
+    [waybar]="$HOME/.config/waybar"
+    [gtk]="$HOME/.config/gtk-3.0 $HOME/.config/gtk-4.0"
+    [qt]="$HOME/.config/qt5ct $HOME/.config/qt6ct"
+    [fontconfig]="$HOME/.config/fontconfig"
+    [nvim]="$HOME/.config/nvim"
+    [fastfetch]="$HOME/.config/fastfetch"
+    [cava]="$HOME/.config/cava"
+    [gdb]="$HOME/.gdbinit"
+    [rofi]="$HOME/.config/rofi"
+    [kitty]="$HOME/.config/kitty"
+    [tmux]="$HOME/.config/tmux"
+    [tmux - sessionizer]="$HOME/.config/tmux-sessionizer"
+    [doom]="$HOME/.config/doom"
+    [mako]="$HOME/.config/mako"
 )
 
 # Define the backup directory and repository URL
@@ -26,18 +27,19 @@ GIT_REPO_URL="git@github.com:koftamainee/dotfiles"
 
 # Create the backup directory if it doesn't exist
 mkdir -p "$BACKUP_DIR"
+rm -rf "$BACKUP_DIR:?"/*
 
 # Backup each configuration file
 echo "Starting backup..."
 for key in "${!CONFIG_FILES[@]}"; do
-  echo "Backing up ${key}..."
-  for file in ${CONFIG_FILES[$key]}; do
-    if [ -e "$file" ]; then
-        cp -r "$file" "$BACKUP_DIR/"
-    else
-      echo "Warning: $file does not exist."
-    fi
-  done
+    echo "Backing up ${key}..."
+    for file in ${CONFIG_FILES[$key]}; do
+        if [ -e "$file" ]; then
+            cp -r "$file" "$BACKUP_DIR/"
+        else
+            echo "Warning: $file does not exist."
+        fi
+    done
 done
 
 # Navigate to the backup directory
@@ -45,9 +47,9 @@ cd "$BACKUP_DIR" || exit
 
 # Initialize Git repository if not already initialized
 if [ ! -d "$BACKUP_DIR/.git" ]; then
-  echo "Initializing Git repository..."
-  git init
-  git remote add origin "$GIT_REPO_URL"
+    echo "Initializing Git repository..."
+    git init
+    git remote add origin "$GIT_REPO_URL"
 fi
 
 # Add, commit, and push changes to GitHub

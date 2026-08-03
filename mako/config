@@ -1,0 +1,48 @@
+font=monospace bold 14
+background-color=#0d1520
+text-color=#f0d9b5
+width=400
+height=200
+
+anchor=top-right
+margin=8
+padding=12
+
+border-size=2
+border-color=#FF6B00
+border-radius=8
+
+icons=1
+max-icon-size=48
+icon-path=/usr/share/icons
+
+markup=1
+actions=1
+history=1
+max-history=20
+
+max-visible=5
+default-timeout=6000
+ignore-timeout=1
+
+group-by=app-name,summary
+sort=-time
+
+# low urgency
+[urgency=low]
+border-color=#5ba3c9
+default-timeout=4000
+
+# normal urgency
+[urgency=normal]
+border-color=#FF6B00
+default-timeout=6000
+
+# critical urgency - stays until dismissed
+[urgency=critical]
+border-color=#cc3333
+default-timeout=0
+
+# Do Not Disturb mode (managed by niri/scripts/dnd.sh)
+[mode=dnd]
+invisible=1
