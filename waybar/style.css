@@ -55,7 +55,7 @@ window#waybar {
 #pulseaudio {
   color: #8fbc8f;
   border-bottom: 5px solid #8fbc8f;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 #pulseaudio.muted {

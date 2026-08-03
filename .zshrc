@@ -86,6 +86,13 @@ alias c='clear'
 alias vim='nvim'
 alias :q='exit'
 alias whoami='whoami && curl -s ident.me && echo'
+alias cr='cargo run'
+alias cw='cargo watch'
+alias crr='cargo run --release'
+alias ct='cargo test'
+alias ch='cargo check'
+alias cb='cargo build'
+alias cbr='cargo build --release'
 
 # dont use it now, but dont want to delete it
 # dont want to delete comment above this one, now t.sh is tmux-sessionizer
