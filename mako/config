@@ -31,12 +31,12 @@ sort=-time
 # low urgency
 [urgency=low]
 border-color=#5ba3c9
-default-timeout=4000
+default-timeout=1000
 
 # normal urgency
 [urgency=normal]
 border-color=#FF6B00
-default-timeout=6000
+default-timeout=2000
 
 # critical urgency - stays until dismissed
 [urgency=critical]
