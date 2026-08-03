@@ -8,6 +8,7 @@ declare -A CONFIG_FILES=(
   [waybar]="$HOME/.config/waybar"
   [gtk]="$HOME/.config/gtk-3.0 $HOME/.config/gtk-4.0"
   [qt]="$HOME/.config/qt5ct $HOME/.config/qt6ct"
+  [fontconfig]="$HOME/.config/fontconfig"
   [nvim]="$HOME/.config/nvim"
   [fastfetch]="$HOME/.config/fastfetch"
   [cava]="$HOME/.config/cava"
