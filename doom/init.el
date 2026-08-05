@@ -17,7 +17,7 @@
 (doom! :input
        ;;bidi              ; (tfel ot) thgir etirw uoy gnipleh
        ;;chinese
-       japanese
+       ;; japanese
        ;;layout            ; auie,ctsrnm is the superior home row
 
        :completion
@@ -43,7 +43,7 @@
        ;;neotree           ; a project drawer, like NERDTree for vim
        ophints           ; highlight the region an operation acts on
        (popup +defaults)   ; tame sudden yet inevitable temporary windows
-       smooth-scroll     ; So smooth you won't believe it's not butter
+       ;; smooth-scroll     ; So smooth you won't believe it's not butter
        ;;tabs              ; a tab bar for Emacs
        ;;treemacs          ; a project drawer, like neotree but cooler
        unicode           ; extended unicode support for various languages
@@ -86,18 +86,18 @@
 
        :checkers
        syntax              ; tasing you for every semicolon you forget
-       (spell +flyspell) ; tasing you for misspelling mispelling
+       ;; (spell +flyspell) ; tasing you for misspelling mispelling
        ;;grammar           ; tasing grammar mistake every you make
 
        :tools
-       ansible
+       ;; ansible
        ;;biblio            ; Writes a PhD for you (citation needed)
        ;;collab            ; buffers with friends
-       debugger          ; stepping through code, to help you add bugs
+       ;; debugger          ; stepping through code, to help you add bugs
        ;;direnv
        docker
        editorconfig      ; let someone else argue about tabs vs spaces
-       ein               ; tame Jupyter notebooks with emacs
+       ;; ein               ; tame Jupyter notebooks with emacs
        (eval +overlay)     ; run code, run (also, repls)
        lookup              ; navigate your code and its documentation
        ;;llm               ; when I said you needed friends, I didn't mean...
@@ -106,7 +106,7 @@
        make              ; run make tasks from Emacs
        ;;pass              ; password manager for nerds
        pdf               ; pdf enhancements
-       terraform         ; infrastructure as code
+       ;; terraform         ; infrastructure as code
        ;;tmux              ; an API for interacting with tmux
        tree-sitter       ; syntax and parsing, sitting in a tree...
        ;;upload            ; map local to remote projects via ssh/ftp
@@ -159,7 +159,7 @@
        ;;nix               ; I hereby declare "nix geht mehr!"
        ocaml             ; an objective camel
        ;;odin              ; C, minus its footguns
-       org               ; organize your plain life in plain text
+       (org +dragndrop +pretty)              ; organize your plain life in plain text
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;graphviz          ; diagrams for confusing yourself even more
@@ -180,21 +180,21 @@
        ;;solidity          ; do you need a blockchain? No.
        ;;swift             ; who asked for emoji variables?
        ;;terra             ; Earth and Moon in alignment for performance.
-       web               ; the tubes
+       ;;web               ; the tubes
        yaml              ; JSON, but readable
        zig               ; C, but simpler
 
        :email
-       (mu4e +org +gmail)
+       ;;(mu4e +org +gmail)
        ;;notmuch
        ;;(wanderlust +gmail)
 
        :app
-       calendar
-       emms
+       ;;calendar
+       ;;emms
        ;;everywhere        ; *leave* Emacs!? You must be joking
-       irc               ; how neckbeards socialize
-       (rss +org)        ; emacs as an RSS reader
+       ;;irc               ; how neckbeards socialize
+       ;;(rss +org)        ; emacs as an RSS reader
 
        :config
        ;;literate

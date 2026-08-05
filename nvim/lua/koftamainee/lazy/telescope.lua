@@ -23,5 +23,8 @@ return {
       builtin.grep_string { search = vim.fn.input "Grep > " }
     end, { desc = "Grep string" })
     vim.keymap.set("n", "<leader>vh", builtin.help_tags, { desc = "Help tags" })
+    vim.keymap.set("n", "<leader>pd", function()
+      builtin.diagnostics { root_dir = true }
+    end, { desc = "Workspace diagnostics" })
   end,
 }

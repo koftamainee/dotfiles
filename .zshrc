@@ -24,7 +24,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 export PATH="$GEM_HOME/bin:$PATH"
 export PATH="$HOME/.emacs.d/bin:$PATH"
-export PATH="$HOME/.opencode/bin:$PATH"
 export PATH="$HOME/.config/emacs/bin:$PATH"
 
 source "$HOME/vulkansdk/default/setup-env.sh" 2>/dev/null
@@ -179,3 +178,6 @@ bindkey -s '^f' "tmux-sessionizer\n"
 # This section can be safely removed at any time if needed.
 [[ ! -r '/home/kofta/.opam/opam-init/init.zsh' ]] || source '/home/kofta/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 # END opam configuration
+
+# opencode
+export PATH=/home/kofta/.opencode/bin:$PATH

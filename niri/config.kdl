@@ -415,7 +415,7 @@ window-rule {
 window-rule {
     match app-id="emacs"
     default-column-width { proportion 1.0; }
-    open-maximized true
+    open-maximized-to-edges true
 }
 
 
@@ -508,6 +508,7 @@ binds {
 
     Mod+Shift+W { spawn "bash" "-c" "~/.config/niri/scripts/WallpaperSelect.sh"; }
     Mod+T { spawn "nautilus"; }
+    Mod+E { spawn "emacsclient" "-c"; }
     Mod+Alt+V { spawn "~/.config/niri/scripts/ClipManager.sh"; }
     Mod+Shift+G { spawn "~/.config/niri/scripts/gamemode.sh"; }
 
