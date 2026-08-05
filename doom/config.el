@@ -34,8 +34,10 @@
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-one)
 
-(setq doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 16)
-      doom-variable-pitch-font (font-spec :family "DejaVu Sans" :size 16))
+;; i want to use 12 font size, but for some fucking reason xwayland doesnt
+;; want to scale properly.
+(setq doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 24)
+      doom-variable-pitch-font (font-spec :family "DejaVu Sans" :size 24))
 
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
@@ -79,14 +81,13 @@
 ;; they are implemented.
 
 (setq display-line-numbers-type 'relative)
-(setq scroll-margin 5)
+;; (setq scroll-margin 5)
 (setq user-full-name "koftamainee"
       user-mail-address "dev@koftamainee.ru")
 
 (use-package! protobuf-mode :mode "\\.proto\\'")
 
-(setq org-cite-global-bibliography '("~/thesis/references.bib"))
-(after! citar
-  (setq citar-bibliography '("~/thesis/references.bib")
-        citar-library-paths '("~/thesis/PDFs")
-        citar-notes-paths '("~/thesis/notes")))
+(after! eglot
+  (map! :leader
+        :desc "Toggle inlay hints"
+        "t h" #'eglot-inlay-hints-mode))

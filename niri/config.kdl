@@ -18,6 +18,7 @@ environment {
     OZONE_PLATFORM "wayland"
     ELECTRON_OZONE_PLATFORM_HINT "wayland"
     MOZ_ENABLE_WAYLAND "1"
+    GDK_SCALE "1.5"
 }
 
 input {
@@ -298,6 +299,7 @@ spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPL
 spawn-at-startup "systemctl" "--user" "start" "xdg-desktop-portal"
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "/usr/bin/gnome-keyring-daemon" "--start" "--components=secrets,ssh"
+spawn-at-startup "xrdb" "-merge" ".Xresources"
 
 spawn-at-startup "awww-daemon"
 spawn-at-startup "mako"
