@@ -3,6 +3,9 @@ font-size = 12
 
 quit-after-last-window-closed = false
 
+working-directory = home
+window-inherit-working-directory = false
+
 background-opacity = 0.9
 command = /usr/bin/zsh
 
