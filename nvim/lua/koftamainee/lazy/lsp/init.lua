@@ -199,11 +199,12 @@ return {
       vim.diagnostic.config {
         -- i fint it kinda annoing to see long lines of rust-analyzer diagnostics
         -- in my code
-        virtual_text = false,
-        -- virtual_text = {
-        --   prefix = " ",
-        --   spacing = 4,
-        -- },
+        -- virtual_text = false,
+        -- fuck it i changed my mind
+        virtual_text = {
+          prefix = " ",
+          spacing = 4,
+        },
         float = {
           focusable = false,
           style = "minimal",
