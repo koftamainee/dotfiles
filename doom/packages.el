@@ -53,3 +53,6 @@
 ;; (unpin! t)
 
 (package! protobuf-mode)
+
+(package! slang-mode
+  :recipe (:host github :repo "k1ngst0m/slang-mode"))

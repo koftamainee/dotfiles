@@ -38,6 +38,7 @@ return {
           "buf_ls",
           "elixirls",
           "zls",
+          "ols",
         },
       }
 

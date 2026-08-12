@@ -91,3 +91,12 @@
   (map! :leader
         :desc "Toggle inlay hints"
         "t h" #'eglot-inlay-hints-mode))
+
+
+(use-package! slang-mode
+  :mode (("\\.slang\\'" . slang-mode)
+         ("\\.sl\\'" . slang-mode)
+         ("\\.slangh\\'" . slang-mode))
+  :config
+  (require 'slang-lsp)
+  (slang-lsp-initialize))
