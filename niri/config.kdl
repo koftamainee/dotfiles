@@ -18,7 +18,6 @@ environment {
     OZONE_PLATFORM "wayland"
     ELECTRON_OZONE_PLATFORM_HINT "wayland"
     MOZ_ENABLE_WAYLAND "1"
-    GDK_SCALE "1.5"
 }
 
 input {
@@ -299,7 +298,6 @@ spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPL
 spawn-at-startup "systemctl" "--user" "start" "xdg-desktop-portal"
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "/usr/bin/gnome-keyring-daemon" "--start" "--components=secrets,ssh"
-spawn-at-startup "xrdb" "-merge" ".Xresources"
 
 spawn-at-startup "awww-daemon"
 spawn-at-startup "mako"
@@ -312,6 +310,7 @@ spawn-sh-at-startup "source /home/kofta/vulkansdk/default/setup-env.sh"
 spawn-at-startup "AyuGram"
 spawn-at-startup "spotify"
 spawn-at-startup "firefox"
+spawn-sh-at-startup "~/.config/niri/scripts/cava.sh"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -414,9 +413,9 @@ window-rule {
 
 
 window-rule {
-    match app-id="Emacs"
+    match app-id="emacs"
     default-column-width { proportion 1.0; }
-    open-maximized-to-edges true
+    open-maximized true
 }
 
 
@@ -514,7 +513,7 @@ binds {
     Mod+Shift+G { spawn "~/.config/niri/scripts/gamemode.sh"; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn-sh "rofi -show drun"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.

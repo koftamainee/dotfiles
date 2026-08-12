@@ -29,7 +29,6 @@ return {
         "markdown_inline",
         "slang",
         "zig",
-        "odin",
       }
 
       require("nvim-treesitter").install(parsers)
