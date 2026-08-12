@@ -100,3 +100,5 @@
   :config
   (require 'slang-lsp)
   (slang-lsp-initialize))
+
+(add-hook 'slang-mode-local-vars-hook #'lsp!)
