@@ -102,3 +102,15 @@
   (slang-lsp-initialize))
 
 (add-hook 'slang-mode-local-vars-hook #'lsp!)
+
+(setq-default tab-width 4
+              evil-shift-width 4)
+
+(after! eglot
+  (add-to-list 'eglot-server-programs
+               '(cmake-mode . ("neocmakelsp" "stdio"))))
+
+
+;; ts mode for cmake kinda sucks
+(after! cmake-mode
+  (setf (alist-get 'cmake-mode major-mode-remap-alist) nil))

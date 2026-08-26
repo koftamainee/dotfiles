@@ -413,9 +413,9 @@ window-rule {
 
 
 window-rule {
-    match app-id="emacs"
+    match app-id="Emacs"
     default-column-width { proportion 1.0; }
-    open-maximized true
+    open-maximized-to-edges true
 }
 
 
