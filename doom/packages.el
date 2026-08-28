@@ -56,3 +56,7 @@
 
 (package! slang-mode
   :recipe (:host github :repo "k1ngst0m/slang-mode"))
+
+(package! mdl-ts-mode
+  :recipe (:host github :repo "koftamainee/mdl"
+           :files ("editor/emacs/mdl-ts-mode.el")))
