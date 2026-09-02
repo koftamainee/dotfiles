@@ -25,6 +25,7 @@ export PATH="$HOME/go/bin:$PATH"
 export PATH="$GEM_HOME/bin:$PATH"
 export PATH="$HOME/.emacs.d/bin:$PATH"
 export PATH="$HOME/.config/emacs/bin:$PATH"
+export PATH="$HOME/.dotnet/tools:$PATH"
 
 source "$HOME/vulkansdk/default/setup-env.sh" 2>/dev/null
 

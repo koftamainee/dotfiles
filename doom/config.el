@@ -115,6 +115,9 @@
 (after! cmake-mode
   (setf (alist-get 'cmake-mode major-mode-remap-alist) nil))
 
+(after! eglot
+  (set-eglot-client! '(python-mode python-ts-mode) '("pyright-langserver" "--stdio")))
+
 ;; Mantle stuff
 (after! nerd-icons
   (add-to-list 'nerd-icons-extension-icon-alist
@@ -123,3 +126,5 @@
                '(mdl-mode nerd-icons-mdicon "nf-md-cube_scan" :face nerd-icons-orange))
   (add-to-list 'nerd-icons-mode-icon-alist
                '(mdl-ts-mode nerd-icons-mdicon "nf-md-cube_scan" :face nerd-icons-orange)))
+
+(add-to-list 'exec-path (expand-file-name "~/.dotnet/tools"))
