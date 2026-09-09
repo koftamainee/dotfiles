@@ -126,5 +126,3 @@
                '(mdl-mode nerd-icons-mdicon "nf-md-cube_scan" :face nerd-icons-orange))
   (add-to-list 'nerd-icons-mode-icon-alist
                '(mdl-ts-mode nerd-icons-mdicon "nf-md-cube_scan" :face nerd-icons-orange)))
-
-(add-to-list 'exec-path (expand-file-name "~/.dotnet/tools"))

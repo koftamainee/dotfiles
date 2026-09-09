@@ -11,6 +11,7 @@
 environment {
     EDITOR "nvim"
     GDK_BACKEND "wayland,x11"
+    GDK_SCALE "1.5"
     QT_QPA_PLATFORM "wayland;xcb"
     QT_QPA_PLATFORMTHEME "q6ct"
     XCURSOR_THEME "Bibata-Modern-Ice"
@@ -127,6 +128,7 @@ output "eDP-1" {
     position x=0 y=0
     variable-refresh-rate
 }
+
 
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
@@ -503,6 +505,8 @@ binds {
     // shows a list of important hotkeys.
     Mod+Shift+Slash { show-hotkey-overlay; }
 
+
+    Mod+P repeat=false { spawn-sh "wl-mirror $(niri msg --json focused-output | jq -r .name)"; }
 
     Mod+Shift+N { spawn "bash" "-c" "~/.config/niri/scripts/dnd.sh"; }
 
