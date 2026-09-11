@@ -126,3 +126,22 @@
                '(mdl-mode nerd-icons-mdicon "nf-md-cube_scan" :face nerd-icons-orange))
   (add-to-list 'nerd-icons-mode-icon-alist
                '(mdl-ts-mode nerd-icons-mdicon "nf-md-cube_scan" :face nerd-icons-orange)))
+
+;; use minted in latex for listings
+(use-package! ox-latex
+  :config
+  (setq org-latex-src-block-backend 'minted
+        org-latex-caption-above '(table src-block)
+        org-latex-pdf-process
+        '("xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+          "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+          "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+  (setq org-latex-classes
+        (delq (assoc "article" org-latex-classes) org-latex-classes))
+  (add-to-list 'org-latex-classes
+               '("article" "\\documentclass[14pt]{extarticle}"
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
