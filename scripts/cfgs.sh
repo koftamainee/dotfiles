@@ -26,7 +26,7 @@ GIT_REPO_URL="git@github.com:koftamainee/dotfiles"
 
 # Create the backup directory if it doesn't exist
 mkdir -p "$BACKUP_DIR"
-rm -rf "$BACKUP_DIR:?"/*
+rm -rf "${BACKUP_DIR:?}"/*
 
 # Backup each configuration file
 echo "Starting backup..."
