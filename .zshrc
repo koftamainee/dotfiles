@@ -14,6 +14,12 @@ export LIBVIRT_DEFAULT_URI=qemu:///system
 export GOPATH=$HOME/go
 export SDKMAN_DIR="$HOME/.sdkman"
 
+export P4PORT=localhost:1666
+export P4USER=$USER
+export P4ROOT=$HOME/Perforce
+export P4JOURNAL=$P4ROOT/p4d.journal
+export P4LOG=$P4ROOT/p4d.log
+
 # i dont want my core to be dumped :(
 ulimit -c 0
 
@@ -45,6 +51,8 @@ plugins=(
 source "$ZSH/oh-my-zsh.sh"
 
 unalias md
+# the FUCK
+unalias '...'
 
 md() {
     if [ -z "$1" ]; then
