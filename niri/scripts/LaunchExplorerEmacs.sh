@@ -6,4 +6,4 @@ dir="$(emacsclient --eval '(with-current-buffer (window-buffer (selected-window)
 
 "$EXPLORER" "$dir"
 
-emacsclient --eval "(message \"opened $EXPLORER in %s\" \"$dir\")" >/dev/null
+emacsclient --eval "(message \"Opened $EXPLORER in %s\" \"$dir\")" >/dev/null
