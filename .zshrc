@@ -58,6 +58,7 @@ SAVEHIST=10000
 setopt HIST_IGNORE_DUPS HIST_IGNORE_SPACE SHARE_HISTORY INC_APPEND_HISTORY
 setopt appendhistory
 
+# i dont like it
 unsetopt AUTO_CD
 
 # safety!!!
