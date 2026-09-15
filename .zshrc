@@ -126,6 +126,15 @@ mkcd() {
 	mkdir -p "$1" && cd "$1" || return
 }
 
+# HOOOOOOOOKS
+autoload -Uz add-zsh-hook
+
+_chpwd_ls() {
+	ls
+}
+
+add-zsh-hook chpwd _chpwd_ls
+
 source <(fzf --zsh)
 
 eval "$(starship init zsh)"
