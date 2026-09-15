@@ -107,9 +107,8 @@ alias cdr='cd "$(git rev-parse --show-superproject-working-tree 2>/dev/null || g
 # commit dotfiles on github
 alias cfgs='bash $HOME/scripts/cfgs.sh'
 
-alias shd='shutdown now'
-# TODO: figure out how to reboot w/o sudo
-alias srb='sudo reboot now'
+alias shd='systemctl poweroff'
+alias srb='systemctl reboot'
 # when'd impostor is sus
 alias sus='systemctl suspend'
 

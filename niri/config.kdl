@@ -412,7 +412,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="org.telegram.desktop"
+    match app-id="Happ"
     open-on-workspace "6"
 }
 
