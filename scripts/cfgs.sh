@@ -21,7 +21,7 @@ declare -A CONFIG_FILES=(
 )
 
 # Define the backup directory and repository URL
-BACKUP_DIR="$HOME/config_backup"
+BACKUP_DIR="$HOME/dotfiles"
 GIT_REPO_URL="git@github.com:koftamainee/dotfiles"
 
 # Create the backup directory if it doesn't exist

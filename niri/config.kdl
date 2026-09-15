@@ -304,14 +304,12 @@ spawn-at-startup "/usr/bin/gnome-keyring-daemon" "--start" "--components=secrets
 spawn-at-startup "awww-daemon"
 spawn-at-startup "mako"
 spawn-at-startup "waybar"
-spawn-at-startup "niri-screen-time -daemon"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 spawn-at-startup "fcitx5 -d"
-spawn-sh-at-startup "source /home/kofta/vulkansdk/default/setup-env.sh"
-spawn-at-startup "AyuGram"
-spawn-at-startup "spotify"
+spawn-at-startup "Telegram"
 spawn-at-startup "firefox"
+spawn-at-startup "happ"
 spawn-sh-at-startup "~/.config/niri/scripts/cava.sh"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
@@ -411,6 +409,11 @@ workspace "5"
 window-rule {
     match app-id="org.telegram.desktop"
     open-on-workspace "3"
+}
+
+window-rule {
+    match app-id="org.telegram.desktop"
+    open-on-workspace "6"
 }
 
 
