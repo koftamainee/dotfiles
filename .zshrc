@@ -48,6 +48,7 @@ plugins=(
 )
 
 source "$ZSH/oh-my-zsh.sh"
+source /usr/share/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
 
 # unalias standart zsh macro for: p4 add ...
 unalias '...'
