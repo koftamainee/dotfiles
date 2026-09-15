@@ -113,7 +113,10 @@
 
 ;; ts mode for cmake kinda sucks
 (after! cmake-mode
-  (setf (alist-get 'cmake-mode major-mode-remap-alist) nil))
+  (setq auto-mode-alist
+        (append '(("CMakeLists\\.txt\\'" . cmake-mode)
+                  ("\\.cmake\\'" . cmake-mode))
+                auto-mode-alist)))
 
 (after! eglot
   (set-eglot-client! '(python-mode python-ts-mode) '("pyright-langserver" "--stdio")))
@@ -136,6 +139,7 @@
         '("xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
           "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
           "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+
   (setq org-latex-classes
         (delq (assoc "article" org-latex-classes) org-latex-classes))
   (add-to-list 'org-latex-classes

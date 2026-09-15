@@ -1,5 +1,8 @@
 return {
   "pixelsandpointers/slang.nvim",
+  -- This plugin is causing errors if loaded on startup and slang{c/d} is not found
+  -- in path
+  ft = "slang",
   dependencies = {
     "neovim/nvim-lspconfig",
     "nvim-treesitter/nvim-treesitter",

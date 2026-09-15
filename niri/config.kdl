@@ -510,13 +510,14 @@ binds {
     Mod+Alt+V { spawn "~/.config/niri/scripts/ClipManager.sh"; }
     Mod+Shift+G { spawn "~/.config/niri/scripts/gamemode.sh"; }
 
-    // greatest niri map ever
+    // greatest niri maps ever
     Mod+Shift+T { spawn "bash" "-c" "~/.config/niri/scripts/LaunchExplorerEmacs.sh"; }
-    Mod+T { spawn "nautilus"; }
+    Mod+Shift+Return { spawn "bash" "-c" "~/.config/niri/scripts/LaunchTerminalEmacs.sh"; }
 
+    Mod+T { spawn "nautilus"; }
+    Mod+B { spawn "blueman-manager"; }
     Mod+E { spawn "emacsclient" "-c"; }
 
-    // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn-sh "rofi -show drun"; }
 
