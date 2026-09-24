@@ -306,11 +306,8 @@ spawn-at-startup "mako"
 spawn-at-startup "waybar"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
-spawn-at-startup "fcitx5 -d"
 spawn-at-startup "Telegram"
 spawn-at-startup "firefox"
-spawn-at-startup "happ"
-spawn-sh-at-startup "~/.config/niri/scripts/cava.sh"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -411,11 +408,6 @@ window-rule {
     open-on-workspace "3"
 }
 
-window-rule {
-    match app-id="Happ"
-    open-on-workspace "6"
-}
-
 
 window-rule {
     match app-id="Emacs"
@@ -441,16 +433,6 @@ window-rule {
     open-on-workspace "2"
 }
 
-
-// Work around WezTerm's initial configure bug
-// by setting an empty default-column-width.
-window-rule {
-    // This regular expression is intentionally made as specific as possible,
-    // since this is the default config, and we want no false positives.
-    // You can get away with just app-id="wezterm" if you want.
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
-}
 
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
@@ -502,8 +484,6 @@ binds {
     // shows a list of important hotkeys.
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-
-    Mod+P repeat=false { spawn-sh "wl-mirror $(niri msg --json focused-output | jq -r .name)"; }
 
     Mod+Shift+N { spawn "bash" "-c" "~/.config/niri/scripts/dnd.sh"; }
     Mod+Shift+W { spawn "bash" "-c" "~/.config/niri/scripts/WallpaperSelect.sh"; }
@@ -558,11 +538,10 @@ binds {
     Mod+Down  { focus-window-down; }
     Mod+Up    { focus-window-up; }
     Mod+Right { focus-column-right; }
-    // disabled to not conflict with tmux sessionizer
-    // Mod+H     { focus-column-left; }
-    // Mod+J     { focus-window-down; }
-    // Mod+K     { focus-window-up; }
-    // Mod+L     { focus-column-right; }
+    Mod+H     { focus-column-left; }
+    Mod+J     { focus-window-down; }
+    Mod+K     { focus-window-up; }
+    Mod+L     { focus-column-right; }
 
     Mod+Shift+Left  { move-column-left; }
     Mod+Shift+Down  { move-window-down; }
@@ -758,7 +737,7 @@ binds {
 
     Mod+Shift+Delete{ screenshot; }
     Mod+Delete { screenshot-screen; }
-    Alt+Ctrl+Delete { screenshot-window; }
+    Mod+Ctrl+Delete { screenshot-window; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here

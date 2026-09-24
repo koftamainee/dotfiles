@@ -46,7 +46,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/dev/org/")
+(setq org-directory "~/dev/emacs/org/")
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
@@ -81,7 +81,6 @@
 ;; they are implemented.
 
 (setq display-line-numbers-type 'relative)
-;; (setq scroll-margin 5)
 (setq user-full-name "koftamainee"
       user-mail-address "dev@koftamainee.ru")
 
@@ -152,3 +151,25 @@
 
 (after! mwheel
   (pixel-scroll-precision-mode 1))
+
+(setq citar-bibliography       '("~/dev/emacs/references.bib")
+      citar-library-paths      '("~/dev/emacs/papers")
+      citar-notes-paths        '("~/dev/emacs/notes")
+      reftex-default-bibliography "~/dev/emacs/references.bib")
+
+(map! :leader
+      (:prefix ("n" . "notes")
+               (:prefix ("b" . "bibliography")
+                :desc "Lookup references online" "b" #'biblio-lookup
+                :desc "Insert citation"          "c" #'citar-insert-citation
+                :desc "Import by DOI"            "d" #'biblio-doi-insert-bibtex
+                :desc "Open notes"               "n" #'citar-open-notes
+                :desc "Open entry"               "o" #'citar-open
+                :desc "Refresh bibliography"     "r" #'citar-refresh)))
+
+(after! LaTeX-mode
+  (map! :map LaTeX-mode-map
+        :localleader
+        :desc "Insert citation" "i c" #'citar-insert-citation))
+
+(setq-default TeX-engine 'luatex)
