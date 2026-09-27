@@ -3,7 +3,6 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
-
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
 ;; (setq user-full-name "John Doe"
@@ -104,6 +103,11 @@
 
 (setq-default tab-width 4
               evil-shift-width 4)
+
+(add-to-list 'exec-path (expand-file-name "~/.juliaup/bin"))
+(setenv "PATH" (concat (expand-file-name "~/.juliaup/bin") ":" (getenv "PATH")))
+
+(setq eglot-jl-language-server-project "~/.julia/environments/v1.12")
 
 (after! eglot
   (add-to-list 'eglot-server-programs

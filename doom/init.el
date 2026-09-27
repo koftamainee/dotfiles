@@ -148,7 +148,7 @@
        ;;janet             ; Fun fact: Janet is me!
        ;;(java +lsp)       ; the poster child for carpal tunnel syndrome
        (javascript +lsp +tree-sitter)        ; all(hope(abandon(ye(who(enter(here))))))
-       ;;julia             ; a better, faster MATLAB
+       (julia +lsp +tree-sitter)             ; a better, faster MATLAB
        ;;kotlin            ; a better, slicker Java(Script)
        (latex +lsp +fold +cdlatex)             ; writing papers in Emacs has never been so fun
        ;;lean              ; for folks with too much to prove
@@ -157,7 +157,7 @@
        (markdown +lsp +tree-sitter +grip)          ; writing docs for people to ignore
        ;;nim               ; python + lisp at the speed of c
        ;;nix               ; I hereby declare "nix geht mehr!"
-       ;; (ocaml +lsp)             ; an objective camel
+       (ocaml +lsp)             ; an objective camel
        ;; (odin +lsp +tree-sitter)              ; C, minus its footguns
        (org +dragndrop +pretty +jupiter)              ; organize your plain life in plain text
        ;;php               ; perl's insecure younger brother

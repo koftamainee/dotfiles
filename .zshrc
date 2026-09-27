@@ -38,6 +38,26 @@ export PATH="$HOME/.config/emacs/bin:$PATH"
 # opencode installation binary
 export PATH=/home/kofta/.opencode/bin:$PATH
 
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/home/kofta/.juliaup/bin' $path)
+export PATH
+# Tab completion for juliaup and julia channel selection
+[ -f "/home/kofta/.julia/juliaup/completions/zsh.zsh" ] && source "/home/kofta/.julia/juliaup/completions/zsh.zsh"
+
+# <<< juliaup initialize <<<
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/home/kofta/.opam/opam-init/init.zsh' ]] || source '/home/kofta/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration
+
 # zsh stuff
 plugins=(
 	docker
@@ -144,3 +164,4 @@ eval "$(zoxide init zsh)"
 eval "$(direnv hook zsh)"
 
 bindkey -s '^f' "tmux-sessionizer\n"
+
