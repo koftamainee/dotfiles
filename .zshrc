@@ -35,9 +35,6 @@ export PATH="$HOME/.npm-global/bin:$PATH"
 # for doom scripts
 export PATH="$HOME/.config/emacs/bin:$PATH"
 
-# opencode installation binary
-export PATH=/home/kofta/.opencode/bin:$PATH
-
 
 # >>> juliaup initialize >>>
 
@@ -135,7 +132,7 @@ alias srb='systemctl reboot'
 alias sus='systemctl suspend'
 
 # anime
-alias ff='fastfetch -c ~/.config/fastfetch/config-compact.jsonc --logo-color-1 "#FF6B00"'
+alias ff='fastfetch -c ~/.config/fastfetch/config-compact.jsonc --logo-color-1 "#c81e2e"'
 alias yolo='sudo pacman -Syu --noconfirm && paru -Syua --devel --noconfirm'
 alias wttr='curl "wttr.in/Moscow"'
 
@@ -165,3 +162,5 @@ eval "$(direnv hook zsh)"
 
 bindkey -s '^f' "tmux-sessionizer\n"
 
+# opencode
+export PATH=/home/kofta/.opencode/bin:$PATH

@@ -222,9 +222,9 @@ layout {
         // off
 
         width 5
-        inactive-color "#1e2a3a"
-        active-gradient from="#FF6B00" to="#FFB347" angle=135
-        urgent-color "#cc241d"
+        inactive-color "#1a1414"
+        active-gradient from="#7a0f1a" to="#c81e2e" angle=135
+        urgent-color "#e0262e"
 
         // Color of the border around windows that request your attention.
         // urgent-color "#9b0000"

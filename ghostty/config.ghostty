@@ -12,28 +12,28 @@ command = /usr/bin/zsh
 keybind = ctrl+shift+v=paste_from_clipboard
 keybind = ctrl+shift+c=copy_to_clipboard
 
-foreground = #f0d9b5
-background = #0d1520
+foreground = #e8e4da
+background = #0a0a0a
 
-selection-background = #FF6B00
-selection-foreground = #0d1520
+selection-background = #c81e2e
+selection-foreground = #0a0a0a
 
-cursor-color = #FF9320
-cursor-text = #0d1520
+cursor-color = #e0262e
+cursor-text = #0a0a0a
 
-palette = 0=#0d1520
-palette = 1=#cc3333
-palette = 2=#7aab5a
-palette = 3=#FFB347
+palette = 0=#0a0a0a
+palette = 1=#c81e2e
+palette = 2=#3ec9b0
+palette = 3=#e0262e
 palette = 4=#5ba3c9
 palette = 5=#b87aaa
-palette = 6=#FF8C42
-palette = 7=#c8b89a
-palette = 8=#1e2a3a
-palette = 9=#ff5555
-palette = 10=#98c97a
-palette = 11=#FFD080
+palette = 6=#7a0f1a
+palette = 7=#c8c8c8
+palette = 8=#1a1414
+palette = 9=#ff2d3a
+palette = 10=#7fe0cc
+palette = 11=#8a9490
 palette = 12=#80bfdd
 palette = 13=#d4a0c8
-palette = 14=#FFB060
-palette = 15=#f0d9b5
+palette = 14=#c81e2e
+palette = 15=#e8e4da

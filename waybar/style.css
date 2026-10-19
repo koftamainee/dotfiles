@@ -5,13 +5,13 @@
   font-weight: bold;
   font-size: 16px;
   min-height: 0;
-  color: #f0d9b5;
+  color: #e8e4da;
   margin: 0;
   padding: 0;
 }
 
 window#waybar {
-  background: #0d1520;
+  background: #0a0a0a;
 }
 
 /* Workspace Buttons */
@@ -20,15 +20,15 @@ window#waybar {
 }
 
 #workspaces button.active label {
-  color: #0d1520;
+  color: #0a0a0a;
 }
 
 #workspaces button:hover {
-  background: #1e2a3a;
+  background: #1a1414;
 }
 
 #workspaces button.active {
-  background: #FF6B00;
+  background: #c81e2e;
 }
 
 #clock,
@@ -42,47 +42,47 @@ window#waybar {
 }
 
 #language {
-  color: #FFB347;
-  border-bottom: 5px solid #FFB347;
+  color: #e0262e;
+  border-bottom: 5px solid #e0262e;
 }
 
 #custom-weather {
-  color: #FF8C42;
-  border-bottom: 5px solid #FF8C42;
+  color: #c81e2e;
+  border-bottom: 5px solid #c81e2e;
 }
 
 #pulseaudio {
-  color: #8fbc8f;
-  border-bottom: 5px solid #8fbc8f;
+  color: #3ec9b0;
+  border-bottom: 5px solid #3ec9b0;
 }
 
 #pulseaudio.muted {
   padding: 0 20px;
-  color: #cc3333;
-  border-bottom: 5px solid #cc3333;
+  color: #7a0f1a;
+  border-bottom: 5px solid #7a0f1a;
 }
 
 #battery {
-  color: #5ba3c9;
-  border-bottom: 5px solid #5ba3c9;
+  color: #7fe0cc;
+  border-bottom: 5px solid #7fe0cc;
 }
 
 #battery.warning {
-  color: #FFB347;
-  border-bottom: 5px solid #FFB347;
+  color: #e0262e;
+  border-bottom: 5px solid #e0262e;
 }
 
 #battery.critical {
-  color: #cc3333;
-  border-bottom: 5px solid #cc3333;
+  color: #ff2d3a;
+  border-bottom: 5px solid #ff2d3a;
 }
 
 #clock {
-  color: #FFD080;
-  border-bottom: 5px solid #FFD080;
+  color: #e8e4da;
+  border-bottom: 5px solid #e8e4da;
 }
 
 #tray {
-  color: #FF6B00;
-  border-bottom: 5px solid #FF6B00;
+  color: #c81e2e;
+  border-bottom: 5px solid #c81e2e;
 }
