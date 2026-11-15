@@ -177,3 +177,6 @@
         :desc "Insert citation" "i c" #'citar-insert-citation))
 
 (setq-default TeX-engine 'luatex)
+
+;; Generic project-local file templates (see $DOOMDIR/project-snippets.el)
+(load! "project-snippets")
